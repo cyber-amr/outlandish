@@ -23,6 +23,14 @@ window/size/viewport_height=600
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[layer_names]
+
+2d_physics/layer_2="terrain"
+2d_physics/layer_3="structure"
+2d_physics/layer_4="player"
+2d_physics/layer_5="enemy"
+2d_physics/layer_6="rigid"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

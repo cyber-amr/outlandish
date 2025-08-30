@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbeybyjlv3yxo"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a63ku"]
+bounce = 0.35
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_a63ku"]
+points = PackedVector2Array(-8, 0, -6, 6, 0, 8, 6, 6, 8, 0, 6, -6, 0, -8, -6, -6)
+
+[node name="Battery" type="RigidBody2D"]
+collision_layer = 32
+collision_mask = 34
+physics_material_override = SubResource("PhysicsMaterial_a63ku")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(16, 16)
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(1, 0.839216, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_a63ku")

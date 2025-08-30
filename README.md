@@ -8,7 +8,7 @@
 - - [ ] pause menu
 - - [ ] interact menu
 - [x] player controls (left, right and drop)
-- [ ] coin payload (physics, overflow and drop)
+- [x] coin payload (physics, overflow, collect and drop)
 - [ ] interact prompts (payment gate, spawn interact menu)
 - [ ] build node
 - - [ ] generator

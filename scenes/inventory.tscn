@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0oclh7w27vnx"]
+
+[ext_resource type="Script" uid="uid://c78lqqnf5umyr" path="res://scripts/inventory.gd" id="1_qw0r6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(80, 80)
+
+[node name="Inventory" type="SubViewport"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(80, 80)
+script = ExtResource("1_qw0r6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(40, 56)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-24, 0)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 16)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(24, 0)
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -32.0
+offset_top = -24.0
+offset_right = -16.0
+offset_bottom = 24.0
+color = Color(0.376471, 0.376471, 0.4, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
+offset_left = -24.0
+offset_top = 8.0
+offset_right = 24.0
+offset_bottom = 24.0
+color = Color(0.376471, 0.376471, 0.4, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="StaticBody2D"]
+offset_left = 16.0
+offset_top = -24.0
+offset_right = 32.0
+offset_bottom = 24.0
+color = Color(0.376471, 0.376471, 0.4, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(40, 40)
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="Items" type="Node" parent="."]
+
+[connection signal="body_exited" from="Area2D" to="." method="on_body_exited"]

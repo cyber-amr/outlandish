@@ -3,9 +3,9 @@
 ## TODO
 
 - [ ] menus
-- - [ ] main menu
+- - [x] main menu
 - - [ ] options menu
-- - [ ] pause menu
+- - [x] pause menu
 - - [ ] interact menu
 - [x] player controls (left, right and drop)
 - [x] coin payload (physics, overflow, collect and drop)

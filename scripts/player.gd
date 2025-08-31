@@ -8,6 +8,7 @@ const SPEED = 300.0
 var hold_delay := 0.5
 var interact_time := 0.0
 
+var pause_menu := preload("res://scenes/pause_menu.tscn")
 
 @onready var game: Game = get_owner()
 @onready var inventory: Inventory = $Inventory
@@ -28,6 +29,9 @@ func _input(event):
 		else:
 			pass
 		interact_time = 0
+
+	if event.is_action_pressed("pause"):
+		$CanvasLayer.add_child(pause_menu.instantiate())
 
 
 func _physics_process(_delta: float) -> void:

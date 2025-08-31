@@ -10,7 +10,7 @@ size = Vector2(32, 48)
 radius = 32.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_g2els"]
-viewport_path = NodePath("Inventory")
+viewport_path = NodePath("CanvasLayer/Inventory preview/dummyViewport")
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 8
@@ -50,5 +50,7 @@ offset_top = 8.0
 offset_right = 88.0
 offset_bottom = 88.0
 texture = SubResource("ViewportTexture_g2els")
+
+[node name="dummyViewport" type="SubViewport" parent="CanvasLayer/Inventory preview"]
 
 [connection signal="body_entered" from="Collector" to="." method="on_collector_body_entered"]

@@ -13,6 +13,10 @@ var interact_time := 0.0
 @onready var inventory: Inventory = $Inventory
 
 
+func _ready() -> void:
+	$"CanvasLayer/Inventory preview".texture.set_viewport_path_in_scene(NodePath("Inventory"))
+
+
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if is_zero_approx(interact_time):

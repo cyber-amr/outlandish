@@ -45,3 +45,4 @@
 - - [ ] rocket lancher
 - - [ ] enemy melee hit
 - - [ ] enemy ranged hit
+- [ ] mini-map

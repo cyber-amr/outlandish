@@ -18,7 +18,7 @@ func _ready():
 
 
 func collect(item: PhysicsBody2D):
-	call_deferred("_transfer", item, items, spawn)
+	call_deferred("transfer", item, items, spawn)
 
 
 func drop(pos: Vector2, item = null):
@@ -27,10 +27,10 @@ func drop(pos: Vector2, item = null):
 		item = items.get_child(-1)
 
 	if item is RigidBody2D:
-		call_deferred("_transfer", item, game.rigids, pos)
+		call_deferred("transfer", item, game.rigids, pos)
 
 
-func _transfer(item: RigidBody2D, to, pos):
+func transfer(item: RigidBody2D, to, pos):
 	item.reparent(to, false)
 	item.owner = to
 	item.global_position = pos

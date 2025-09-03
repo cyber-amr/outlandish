@@ -31,7 +31,9 @@ func _input(event):
 		interact_time = 0
 
 	if event.is_action_pressed("pause"):
-		$CanvasLayer.add_child(pause_menu.instantiate())
+		get_viewport().set_input_as_handled()
+		if !$CanvasLayer.get_child(-1) is PauseMenu:
+			$CanvasLayer.add_child(pause_menu.instantiate())
 
 
 func _physics_process(_delta: float) -> void:

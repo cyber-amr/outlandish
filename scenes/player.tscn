@@ -47,10 +47,11 @@ color = Color(0.423529, 0.235294, 0.988235, 1)
 [node name="Inventory preview" type="TextureRect" parent="CanvasLayer"]
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 88.0
-offset_bottom = 88.0
+offset_right = 10.0
+offset_bottom = 10.0
 texture = SubResource("ViewportTexture_g2els")
 
 [node name="dummyViewport" type="SubViewport" parent="CanvasLayer/Inventory preview"]
+size = Vector2i(2, 2)
 
 [connection signal="body_entered" from="Collector" to="." method="on_collector_body_entered"]

@@ -9,6 +9,7 @@ func _input(event: InputEvent) -> void:
 
 func on_continue() -> void:
 	queue_free()
+	Engine.time_scale = 1
 
 
 func on_options() -> void:
@@ -16,4 +17,5 @@ func on_options() -> void:
 
 
 func on_quit() -> void:
+	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

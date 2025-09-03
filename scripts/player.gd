@@ -32,8 +32,7 @@ func _input(event):
 
 	if event.is_action_pressed("pause"):
 		get_viewport().set_input_as_handled()
-		if !$CanvasLayer.get_child(-1) is PauseMenu:
-			$CanvasLayer.add_child(pause_menu.instantiate())
+		on_pause()
 
 
 func _physics_process(_delta: float) -> void:
@@ -49,3 +48,9 @@ func _physics_process(_delta: float) -> void:
 func on_collector_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D:
 		inventory.collect(body)
+
+
+func on_pause() -> void:
+	if !$CanvasLayer.get_child(-1) is PauseMenu:
+			$CanvasLayer.add_child(pause_menu.instantiate())
+			Engine.time_scale = 0
